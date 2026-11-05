@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Зручний список справ із лічильниками та збереженням у браузері.">
+  <title>Мій список справ | Лабораторна робота 18</title>
+  <!-- Bootstrap із початкового проєкту -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container app-container">
+    <section class="todo-app" aria-labelledby="app-title">
+      <header class="app-header">
+        <div class="eyebrow">ОРГАНІЗУЙ СВІЙ ДЕНЬ</div>
+        <h1 id="app-title">Мій список справ <span aria-hidden="true">✦</span></h1>
+        <p class="subtitle">Записуй плани, відмічай виконане та стеж за своїм прогресом.</p>
+      </header>
+
+      <div class="statistics" aria-label="Статистика списку справ">
+        <div class="stat-card">
+          <span class="stat-label">Усього справ</span>
+          <strong id="item-count" class="stat-number">0</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Залишилось виконати</span>
+          <strong id="unchecked-count" class="stat-number">0</strong>
+        </div>
+      </div>
+
+      <div class="progress-wrapper">
+        <div class="progress-head">
+          <span>Прогрес виконання</span>
+          <strong id="progress-text">0%</strong>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Виконано справ" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="todo-progress">
+          <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <button type="button" class="btn btn-primary add-button" onclick="newTodo()">+ Додати справу</button>
+        <button type="button" class="btn btn-outline-secondary clear-button" id="clear-completed" onclick="clearCompleted()">Видалити виконані</button>
+      </div>
+
+      <h2 class="list-heading">Мої завдання</h2>
+      <ul id="todo-list" class="list-group" aria-label="Список справ"></ul>
+      <p class="storage-note">☁ Справи автоматично зберігаються в цьому браузері.</p>
+    </section>
+    <p class="credit">Лабораторна робота №18 · Вебпрограмування</p>
+  </main>
+</body>
+</html>
